@@ -173,6 +173,6 @@ if __name__ == "__main__":
     test_file = project_root / "data/testset/industryor.jsonl"
     output_file = project_root / "inference/results_server_industryor.jsonl"
 
-    batch_from_jsonl(str(test_file), str(output_file), max_samples=3)
+    batch_from_jsonl(str(test_file), str(output_file), max_samples=50)
 
 
