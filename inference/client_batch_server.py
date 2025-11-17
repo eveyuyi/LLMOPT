@@ -4,6 +4,7 @@ import socket
 import subprocess
 import tempfile
 import random
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -171,7 +172,10 @@ if __name__ == "__main__":
     # 示例：使用 industryor 测试集，只跑前 3 个问题
     project_root = Path(__file__).parent.parent
     test_file = project_root / "data/testset/industryor.jsonl"
-    output_file = project_root / "inference/results_server_industryor.jsonl"
+    results_dir = project_root / "inference" / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = results_dir / f"results_{timestamp}.jsonl"
 
     batch_from_jsonl(str(test_file), str(output_file), max_samples=50)
 
