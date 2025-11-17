@@ -12,8 +12,8 @@ import prompts.generate_prompt as generate_prompt
 
 
 # load model and tokenizer
-path = ''
-path_t = ''
+path = '/data/models/LLMOPT-Qwen2.5-14B'
+path_t = '/data/models/LLMOPT-Qwen2.5-14B'
 device = "cuda"
 model = AutoModelForCausalLM.from_pretrained(
     path,
@@ -92,7 +92,7 @@ def test_code(code_str):
 
 
 # example usage
-question = ""
+question = "The Li family plans to invest their retirement fund in commercial real estate. Property 1 has an annual income of $12,500, Property 2 has an annual income of $35,000, Property 3 has an annual income of $23,000, and Property 4 has an annual income of $100,000. The decision to be made is whether to buy or not buy each property, not the quantity, as there is only one property per property. Help them decide which properties to purchase to maximize their annual income.\nProperty 1 costs $1.5 million, Property 2 costs $2.1 million, Property 3 costs $2.3 million, and Property 4 costs $4.2 million. The Li family's budget is $7 million.\n\nIf they purchase Property 4, then they cannot purchase Property 3."
 five_elem = infer_five_elem(question)
 code_str = infer_code(five_elem)
 out_log, err_log = test_code(code_str)

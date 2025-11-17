@@ -1,7 +1,7 @@
 from transformers import AutoModel, AutoTokenizer, AutoModelForCausalLM
 
-path = ''
-path_t = ''
+path = '/data/models/LLMOPT-Qwen2.5-14B'
+path_t = '/data/models/LLMOPT-Qwen2.5-14B'
 
 
 device = "cuda" 
